@@ -12,6 +12,10 @@ describe('horse-kata', () => {
             const moves = calculateKnightMoves('a1', 'f5')
             expect(moves).toBe(3)
         })
+        it('returns 0 if start and end field are the same', () => {
+            const moves = calculateKnightMoves('a1', 'a1')
+            expect(moves).toBe(0)
+        })
     });
 
     describe('#isValidChessField', () => {

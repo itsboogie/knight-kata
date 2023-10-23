@@ -4,10 +4,12 @@ const validNumbers = '12345678'
 
 
 export function calculateKnightMoves(start: string, end: string): number{
-    let moves = 0;
+    if(start === end){
+        return 0
+    }
+
     let targets = [start]
-    while(true){
-        moves++;
+    for(let moves = 1 ;; moves++){
         targets = targets.flatMap(target => calculateAdjacentKnightTargets(target))
         if(targets.includes(end)){
             return moves        
